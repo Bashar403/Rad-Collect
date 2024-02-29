@@ -13,8 +13,13 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('image'); //this will store a path to the image file
+            $table->dateTime('time');
+            $table->string('location');
             $table->timestamps();
         });
+
     }
 
     /**
