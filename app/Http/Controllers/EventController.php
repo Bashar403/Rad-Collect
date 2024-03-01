@@ -31,23 +31,22 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|max:255',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        $validated = $request->validate([
+            'name' => 'required',
+            'image' => 'required|image',
             'time' => 'required|date',
-            'location' => 'required|max:255',
+            'location' => 'required',
         ]);
 
-        $data = $request->only(['name', 'time', 'location']);
-
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('public/events');
+            $validated['image'] = $request->file('image')->store('public/events');
         }
 
-        Event::create($data);
+        Event::create($validated);
 
-        return redirect()->route('events.index')->with('success', 'Event created successfully.');
+        return redirect()->route('events.index')->with('success', 'Event added successfully!');
     }
+
 
 
 
