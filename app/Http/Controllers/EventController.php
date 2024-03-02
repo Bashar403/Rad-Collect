@@ -31,20 +31,25 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
             'name' => 'required',
             'image' => 'required|image',
             'time' => 'required|date',
             'location' => 'required',
         ]);
 
+        $data = $request->all();
+
         if ($request->hasFile('image')) {
-            $validated['image'] = $request->file('image')->store('public/events');
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images'), $imageName);
+            $data['image'] = 'images/' . $imageName;
         }
 
-        Event::create($validated);
 
-        return redirect()->route('events.index')->with('success', 'Event added successfully!');
+        Event::create($data);
+
+        return redirect()->route('events.index')->with('success', 'Event created successfully.');
     }
 
 
@@ -53,10 +58,11 @@ class EventController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Event $event)
+    public function show(Event $event) // The variable name `$event` should match the route parameter `{event}`
     {
         return view('events.show', compact('event'));
     }
+
 
 
     /**

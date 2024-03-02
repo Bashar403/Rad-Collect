@@ -20,6 +20,8 @@
         <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded">
             Click me
         </button>
+        <a href="{{ route('events.index') }}">View Events</a>
+
 
 
     </body>
