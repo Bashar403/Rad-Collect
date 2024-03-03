@@ -24,15 +24,15 @@
                         </button>
 
                         <div class="md:flex hidden space-x-4 items-center gap-4">
-                            <a href="about.html" class="text-white text-lg font-bold hover:text-blue-500">About</a>
-                            <a href="event.html" class="text-white text-lg font-bold hover:text-blue-500">Events</a>
-                            <a href="collection.html" class="text-white text-lg font-bold hover:text-blue-500">Collection</a>
-                            <a href="community.html" class="text-white text-lg font-bold hover:text-blue-500">Community</a>
+                            <a href="{{ route('about') }}" class="text-white text-lg font-bold hover:text-blue-500">About Us</a>
+                            <a href="{{ route('events.index')}}" class="text-white text-lg font-bold hover:text-blue-500">Events</a>
+                            <a href="{{ route('collections.index')}}" class="text-white text-lg font-bold hover:text-blue-500">Collection</a>
+                            <a href="{{ route('community.index')}}" class="text-white text-lg font-bold hover:text-blue-500">Community</a>
                             <div x-data="{ openDropdown: false }" class="relative text-lg">
                                 <button @click="openDropdown = !openDropdown" class="text-white font-bold hover:text-blue-500">Contact Us</button>
                                 <div x-show="openDropdown" @click.away="openDropdown = false" class="absolute mt-2 py-2 w-48 bg-white rounded-lg shadow-xl z-50">
-                                    <a href="contact.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">Contact</a>
-                                    <a href="faq.html" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">FAQ</a>
+                                    <a href="{{ route('contact.create')}}" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">Contact</a>
+                                    <a href="{{ route('faq') }}" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">FAQ</a>
                                 </div>
                             </div>
                             <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded font-bold hover:bg-blue-600">Sign Up</a>
@@ -41,12 +41,12 @@
 
                     <!-- Mobile and tab navigation bar -->
                     <div class="md:hidden py-5" x-show="open" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
-                        <a href="about.html" class="block py-2 text-white text-lg font-bold hover:text-blue-500">About</a>
-                        <a href="event.html" class="block py-2 text-white text-lg font-bold hover:text-blue-500">Events</a>
-                        <a href="collection.html" class="block py-2 text-white text-lg font-bold hover:text-blue-500">Collection</a>
-                        <a href="community.html" class="block py-2 text-white text-lg font-bold hover:text-blue-500">Community</a>
-                        <a href="contact.html" class="block py-2 text-white text-lg font-bold hover:text-blue-500">Contact</a>
-                        <a href="faq.html" class="block py-2 text-white text-lg font-bold hover:text-blue-500">FAQ</a>
+                        <a href="{{ route('about') }}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">About</a>
+                        <a href="{{ route('events.index')}}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">Events</a>
+                        <a href="{{ route('collections.index')}}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">Collection</a>
+                        <a href="{{ route('community.index')}}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">Community</a>
+                        <a href="{{ route('contact.create')}}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">Contact</a>
+                        <a href="{{ route('faq') }}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">FAQ</a>
                         <a href="" class="bg-blue-500 text-white px-4 py-2 rounded font-bold hover:bg-blue-600">Sign Up</a>
                     </div>
                 </nav>
@@ -56,8 +56,8 @@
             <div class="flex flex-col items-center ">
                 <h1 class="text-2xl font-bold text-gray-800 text-center mt-10 sm:text-4xl">Discover the Excitement of <br> Collectible and Events</h1>
                 <p class="text-base text-gray-800 mt-5 text-center">Check out our UpComing Events</p>
-                <a href="#" class="mt-5 bg-blue-500 text-white px-4 py-2 font-bold hover:bg-blue-600">Events</a>
-                <a href="#" class="mt-5"><img class="lg:w-auto pt-3 w-96 max-w-lg" src="{{asset('Theme/imgs/Event.jpg')}}" alt="Website's Logo"></a>
+                <a href="{{ route('events.index')}}" class="mt-5 bg-blue-500 text-white px-4 py-2 font-bold hover:bg-blue-600">Events</a>
+                <a href="#" class="mt-5"><img class="lg:w-auto pt-3 w-96 max-w-lg" src="{{asset('Theme/imgs/Event.jpg')}}" alt="hero img"></a>
             </div>
 
             {{-- Event Section--}}
@@ -73,17 +73,17 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center border-2 border-gray-800 rounded-xl">
                             <!-- Event Image -->
                             <div class="row-start-1 md:col-start-1">
-                                <img src="{{asset('Theme/imgs/Event.jpg')}}" alt="Event Name" class="w-full h-56 object-cover object-center sm:rounded-l-lg sm:rounded-tr-none rounded-t-lg shadow-md">
+                                <img src="{{asset('Theme/imgs/Event.jpg')}}" alt="Event image" class="w-full h-56 object-cover object-center sm:rounded-l-lg sm:rounded-tr-none rounded-t-lg shadow-md">
                             </div>
                             <!-- Event Details -->
                             <div class="mt-4 p-6">
                                 <h2 class="text-2xl font-bold text-gray-800">Event Name</h2>
                                 <div class="mt-4 flex items-center">
-                                    <img class="w-6 mr-2" src="{{asset('Theme/imgs/time.svg')}}" alt="Time">
+                                    <img class="w-6 mr-2" src="{{asset('Theme/imgs/time.svg')}}" alt="Time icon">
                                     <p class="text-xl text-gray-800">12:00 PM</p>
                                 </div>
                                 <div class="mt-2 flex items-center">
-                                    <img class="w-6 mr-2" src="{{asset('Theme/imgs/map-pin.svg')}}" alt="Map">
+                                    <img class="w-6 mr-2" src="{{asset('Theme/imgs/map-pin.svg')}}" alt="Map icon">
                                     <p class="text-xl text-gray-800">Location</p>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-8">
-                    <a href="">
+                    <a href="{{ route('events.index')}}">
                         <button class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition duration-300">
                             View More
                         </button>
@@ -102,7 +102,7 @@
             {{-- Collection Section--}}
             <div class="p-12">
                 <!-- Featured Collectibles Section -->
-                <h4 class="text-2xl font-bold text-gray-800 text-center mt-10">Featured Collectibles</h4>
+                <h2 class="text-3xl font-bold text-gray-800 text-center mt-10">Featured Collectibles</h2>
                 <p class="text-base text-gray-800 mt-5 text-center">Click on the item to check its availability</p>
 
                 <!-- Collectibles Grid -->
@@ -155,7 +155,7 @@
                 </div>
 
                 <div class="text-center mt-8">
-                    <a href="">
+                    <a href="{{ route('collections.index')}}">
                         <button class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition duration-300">
                             View More
                         </button>
@@ -173,10 +173,10 @@
             <div class="flex flex-col items-center">
                 <img class="w-20" src="{{asset('Theme/imgs/Logo.png')}}" alt="Website's Logo">
                 <div class="flex items-center gap-4 mt-4">
-                    <a href="#" class="text-gray-800 text-lg font-bold hover:text-blue-500">Events</a>
-                    <a href="#" class="text-gray-800 text-lg font-bold hover:text-blue-500">Collection</a>
-                    <a href="#" class="text-gray-800 text-lg font-bold hover:text-blue-500">Community</a>
-                    <a href="#" class="text-gray-800 text-lg font-bold hover:text-blue-500">Contact</a>
+                    <a href="{{ route('events.index')}}" class="text-gray-800 text-lg font-bold hover:text-blue-500">Events</a>
+                    <a href="{{ route('collections.index')}}" class="text-gray-800 text-lg font-bold hover:text-blue-500">Collection</a>
+                    <a href="{{ route('community.index')}}" class="text-gray-800 text-lg font-bold hover:text-blue-500">Community</a>
+                    <a href="{{ route('contact.create')}}" class="text-gray-800 text-lg font-bold hover:text-blue-500">Contact</a>
 
                 </div>
             </div>
@@ -184,9 +184,9 @@
         <footer class="bg-yellow-500 ">
             <div class="flex flex-col items-center">
                 <div class="flex items-center gap-4 mt-4">
-                    <a href="#" class="text-white text-lg font-bold hover:text-blue-500"><img class="w-10" src="{{asset('Theme/imgs/facebook.svg')}}" alt="Facebook"></a>
-                    <a href="#" class="text-white text-lg font-bold hover:text-blue-500"><img class="w-11" src="{{asset('Theme/imgs/instagram.svg')}}" alt="instagram"></a>
-                    <a href="#" class="text-white text-lg font-bold hover:text-blue-500"><img class="w-11" src="{{asset('Theme/imgs/youtube.svg')}}" alt="instagram"></a>
+                    <a href="https://www.facebook.com/robbie.durling.9?mibextid=ZbWKwL&paipv=0&eav=Afbs4empNI3VQGcPpPvuRt_irK1mOlPu1q8Ufe8x9t1xHQt8ejfwawh69Z9L7n439mw&_rdr" class="text-white text-lg font-bold hover:text-blue-500"><img class="w-10" src="{{asset('Theme/imgs/facebook.svg')}}" alt="Facebook icon"></a>
+                    <a href="https://www.instagram.com/robbied_scc/" class="text-white text-lg font-bold hover:text-blue-500"><img class="w-11" src="{{asset('Theme/imgs/instagram.svg')}}" alt="instagram icon"></a>
+                    <a href="https://www.youtube.com/@rad124" class="text-white text-lg font-bold hover:text-blue-500"><img class="w-11" src="{{asset('Theme/imgs/youtube.svg')}}" alt="youtube icon"></a>
                 </div>
                 <p class="text-white my-4 font-bold">© 2024 SiteSoar</p>
             </div>
