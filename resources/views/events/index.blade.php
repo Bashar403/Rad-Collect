@@ -1,31 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="py-8">
-        <div class="mb-4">
-            <a href="{{ route('events.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Add New Event
-            </a>
-        </div>
-        @foreach ($events as $event)
-            <div class="max-w-sm w-full lg:max-w-full lg:flex mb-4">
-                <div class="border-r border-b border-l border-t border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-                    <div class="mb-8">
-                        <div class="text-gray-900 font-bold text-xl mb-2">{{ $event->name }}</div>
-                        <p class="text-gray-700 text-base">{{ $event->location }}</p>
-                        <p class="text-gray-700 text-base">{{ $event->time }}</p>
-                    </div>
-                    <div class="flex items-center">
-                        <a href="{{ route('events.edit', $event->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">Edit</a>
-                        <form action="{{ route('events.destroy', $event->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="ml-2 bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">Delete</button>
-                        </form>
-                    </div>
+    <div class="flex justify-center h-full">
+        <div class="w-full px-5 py-12">
+            <h2 class="text-3xl font-bold text-gray-800 text-center mt-10 sm:text-4xl">Upcoming Events</h2>
+            <p class="text-base text-gray-800 mt-5 text-center">Discover the latest events happening near you</p>
+
+            <div class="pt-10 flex justify-center">
+                <!-- Events List Container -->
+                <div class="w-full lg:w-3/4 space-y-12">
+
+                    @foreach ($events as $event)
+                        <!-- Example Event -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center border-2 border-gray-800 rounded-xl">
+                            <!-- Event Image -->
+                            <div class="row-start-1 md:col-start-1">
+                                <img src="{{ secure_asset($event->image) }}" alt="Event image" class="w-full h-56 object-cover object-center sm:rounded-l-lg sm:rounded-tr-none rounded-t-lg shadow-md">
+
+                            </div>
+                            <!-- Event Details -->
+                            <div class="mt-4 md:mt-0">
+                                <h2 class="text-3xl font-bold text-gray-800">{{ $event->name }}</h2>
+                                <div class="mt-4 flex items-center">
+                                    <img class="w-6 mr-2" src="{{secure_asset('Theme/imgs/time.svg')}}" alt="Time">
+                                    <p class="text-xl text-gray-800">{{ $event->time }}</p>
+                                </div>
+                                <div class="mt-2 flex items-center">
+                                    <img class="w-6 mr-2" src="{{secure_asset('Theme/imgs/map-pin.svg')}}" alt="Map">
+                                    <p class="text-xl text-gray-800">{{ $event->location }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
-        @endforeach
+        </div>
     </div>
 @endsection
 

@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="flex justify-center h-full">
     <div class="py-8">
-        <h1 class="text-lg mb-4">Create New Event</h1>
+        <h1 class="text-2xl mb-4">Create New Event</h1>
         <form action="{{ route('events.store') }}" method="POST" enctype="multipart/form-data" class="w-full max-w-lg">
             @csrf
             <div class="flex flex-wrap -mx-3 mb-6">
@@ -45,5 +46,6 @@
                 </button>
             </div>
         </form>
+    </div>
     </div>
 @endsection

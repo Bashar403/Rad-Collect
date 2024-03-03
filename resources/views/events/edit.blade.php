@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="flex justify-center h-full">
     <div class="py-8">
-        <h1 class="text-lg mb-4">Edit Event</h1>
+        <h1 class="text-2xl mb-4">Edit Event</h1>
         <form action="{{ route('events.update', $event->id) }}" method="POST" enctype="multipart/form-data" class="w-full max-w-lg">
             @csrf
             @method('PUT') <!-- Important for specifying the HTTP method as PUT -->
@@ -51,5 +52,6 @@
                 </button>
             </div>
         </form>
+    </div>
     </div>
 @endsection
