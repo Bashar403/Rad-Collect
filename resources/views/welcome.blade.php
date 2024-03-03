@@ -16,7 +16,7 @@
             <header x-data="{ open: false }" class="flex flex-col">
                 <nav class="bg-yellow-500 px-10">
                     <div class="flex justify-between items-center">
-                        <a href="/RadsCollect" class="text-lg font-semibold"><img class="sm:w-32 w-20" src="{{asset('Theme/imgs/Logo.png')}}" alt="Website's Logo"></a>
+                        <a href="/RadsCollect" class="text-lg font-semibold"><img class="sm:w-32 w-20" src="{{secure_asset('Theme/imgs/Logo.png')}}" alt="Website's Logo"></a>
 
                         <button @click="open = !open" class="text-lg md:hidden">
                             <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -57,7 +57,7 @@
                 <h1 class="text-2xl font-bold text-gray-800 text-center mt-10 sm:text-4xl">Discover the Excitement of <br> Collectible and Events</h1>
                 <p class="text-base text-gray-800 mt-5 text-center">Check out our UpComing Events</p>
                 <a href="{{ route('events.index')}}" class="mt-5 bg-blue-500 text-white px-4 py-2 font-bold hover:bg-blue-600">Events</a>
-                <a href="#" class="mt-5"><img class="lg:w-auto pt-3 w-96 max-w-lg" src="{{asset('Theme/imgs/Event.jpg')}}" alt="hero img"></a>
+                <a href="#" class="mt-5"><img class="lg:w-auto pt-3 w-96 max-w-lg" src="{{secure_asset('Theme/imgs/Event.jpg')}}" alt="hero img"></a>
             </div>
 
             {{-- Event Section--}}
@@ -73,17 +73,17 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center border-2 border-gray-800 rounded-xl">
                             <!-- Event Image -->
                             <div class="row-start-1 md:col-start-1">
-                                <img src="{{asset('Theme/imgs/Event.jpg')}}" alt="Event image" class="w-full h-56 object-cover object-center sm:rounded-l-lg sm:rounded-tr-none rounded-t-lg shadow-md">
+                                <img src="{{secure_asset('Theme/imgs/Event.jpg')}}" alt="Event image" class="w-full h-56 object-cover object-center sm:rounded-l-lg sm:rounded-tr-none rounded-t-lg shadow-md">
                             </div>
                             <!-- Event Details -->
                             <div class="mt-4 p-6">
                                 <h2 class="text-2xl font-bold text-gray-800">Event Name</h2>
                                 <div class="mt-4 flex items-center">
-                                    <img class="w-6 mr-2" src="{{asset('Theme/imgs/time.svg')}}" alt="Time icon">
+                                    <img class="w-6 mr-2" src="{{secure_asset('Theme/imgs/time.svg')}}" alt="Time icon">
                                     <p class="text-xl text-gray-800">12:00 PM</p>
                                 </div>
                                 <div class="mt-2 flex items-center">
-                                    <img class="w-6 mr-2" src="{{asset('Theme/imgs/map-pin.svg')}}" alt="Map icon">
+                                    <img class="w-6 mr-2" src="{{secure_asset('Theme/imgs/map-pin.svg')}}" alt="Map icon">
                                     <p class="text-xl text-gray-800">Location</p>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
                     <div class="border-2">
                         <a href="">
                             <div class="flex flex-col items-center gap-4">
-                                <img class="w-full h-60 object-cover" src="{{asset('Theme/imgs/funko1.jpg')}}" alt="Collectible 1">
+                                <img class="w-full h-60 object-cover" src="{{secure_asset('Theme/imgs/funko1.jpg')}}" alt="Collectible 1">
                                 <h5 class="text-xl font-bold text-gray-800 text-center p-3">Collectible 1</h5>
 
                             </div>
@@ -119,7 +119,7 @@
                     <div class="border-2">
                         <a href="">
                             <div class="flex flex-col items-center gap-4">
-                                <img class="w-full h-60 object-cover" src="{{asset('Theme/imgs/funko1.jpg')}}" alt="Collectible 1">
+                                <img class="w-full h-60 object-cover" src="{{secure_asset('Theme/imgs/funko1.jpg')}}" alt="Collectible 1">
                                 <h5 class="text-xl font-bold text-gray-800 text-center p-3">Collectible 1</h5>
 
                             </div>
@@ -128,7 +128,7 @@
                     <div class="border-2">
                         <a href="">
                             <div class="flex flex-col items-center gap-4">
-                                <img class="w-full h-60 object-cover" src="{{asset('Theme/imgs/funko1.jpg')}}" alt="Collectible 1">
+                                <img class="w-full h-60 object-cover" src="{{secure_asset('Theme/imgs/funko1.jpg')}}" alt="Collectible 1">
                                 <h5 class="text-xl font-bold text-gray-800 text-center p-3">Collectible 1</h5>
 
                             </div>
@@ -137,7 +137,7 @@
                     <div class="border-2">
                         <a href="">
                             <div class="flex flex-col items-center gap-4">
-                                <img class="w-full h-60 object-cover" src="{{asset('Theme/imgs/funko1.jpg')}}" alt="Collectible 1">
+                                <img class="w-full h-60 object-cover" src="{{secure_asset('Theme/imgs/funko1.jpg')}}" alt="Collectible 1">
                                 <h5 class="text-xl font-bold text-gray-800 text-center p-3">Collectible 1</h5>
 
                             </div>
@@ -146,7 +146,7 @@
                     <div class="border-2">
                         <a href="">
                             <div class="flex flex-col items-center gap-4">
-                                <img class="w-full h-60 object-cover" src="{{asset('Theme/imgs/funko1.jpg')}}" alt="Collectible 1">
+                                <img class="w-full h-60 object-cover" src="{{secure_asset('Theme/imgs/funko1.jpg')}}" alt="Collectible 1">
                                 <h5 class="text-xl font-bold text-gray-800 text-center p-3">Collectible 1</h5>
 
                             </div>
@@ -166,12 +166,10 @@
 
 
 
-
-
             {{--    Footer Section--}}
         <section class= "py-5">
             <div class="flex flex-col items-center">
-                <img class="w-20" src="{{asset('Theme/imgs/Logo.png')}}" alt="Website's Logo">
+                <img class="w-20" src="{{secure_asset('Theme/imgs/Logo.png')}}" alt="Website's Logo">
                 <div class="flex items-center gap-4 mt-4">
                     <a href="{{ route('events.index')}}" class="text-gray-800 text-lg font-bold hover:text-blue-500">Events</a>
                     <a href="{{ route('collections.index')}}" class="text-gray-800 text-lg font-bold hover:text-blue-500">Collection</a>
@@ -185,8 +183,8 @@
             <div class="flex flex-col items-center">
                 <div class="flex items-center gap-4 mt-4">
                     <a href="https://www.facebook.com/robbie.durling.9?mibextid=ZbWKwL&paipv=0&eav=Afbs4empNI3VQGcPpPvuRt_irK1mOlPu1q8Ufe8x9t1xHQt8ejfwawh69Z9L7n439mw&_rdr" class="text-white text-lg font-bold hover:text-blue-500"><img class="w-10" src="{{asset('Theme/imgs/facebook.svg')}}" alt="Facebook icon"></a>
-                    <a href="https://www.instagram.com/robbied_scc/" class="text-white text-lg font-bold hover:text-blue-500"><img class="w-11" src="{{asset('Theme/imgs/instagram.svg')}}" alt="instagram icon"></a>
-                    <a href="https://www.youtube.com/@rad124" class="text-white text-lg font-bold hover:text-blue-500"><img class="w-11" src="{{asset('Theme/imgs/youtube.svg')}}" alt="youtube icon"></a>
+                    <a href="https://www.instagram.com/robbied_scc/" class="text-white text-lg font-bold hover:text-blue-500"><img class="w-11" src="{{secure_asset('Theme/imgs/instagram.svg')}}" alt="instagram icon"></a>
+                    <a href="https://www.youtube.com/@rad124" class="text-white text-lg font-bold hover:text-blue-500"><img class="w-11" src="{{secure_asset('Theme/imgs/youtube.svg')}}" alt="youtube icon"></a>
                 </div>
                 <p class="text-white my-4 font-bold">© 2024 SiteSoar</p>
             </div>
