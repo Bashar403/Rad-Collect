@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('collections', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('image');
+            $table->string('link'); // URL to a third-party website
+            $table->string('type'); // 'cards' or 'collectibles'
             $table->timestamps();
         });
     }
