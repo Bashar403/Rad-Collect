@@ -8,24 +8,24 @@ use Illuminate\Http\Request;
 class CommunityController extends Controller
 {
     /**
-     * Display a listing of the community members.
+     * Display a listing of the communities members.
      */
     public function index()
     {
-        $communityMembers = Community::latest()->get();
-        return view('community.index', compact('communityMembers'));
+        $communities = Community::latest()->get();
+        return view('communities.index', compact('communities'));
     }
 
     /**
-     * Show the form for creating a new community member.
+     * Show the form for creating a new communities member.
      */
     public function create()
     {
-        return view('community.create');
+        return view('communities.create');
     }
 
     /**
-     * Store a newly created community member in storage.
+     * Store a newly created communities member in storage.
      */
     public function store(Request $request)
     {
@@ -40,33 +40,33 @@ class CommunityController extends Controller
 
         if ($request->hasFile('image')) {
             $imageName = time().'.'.$request->image->extension();
-            $request->image->move(public_path('images/community'), $imageName);
-            $data['image'] = 'images/community/' . $imageName;
+            $request->image->move(public_path('images/communities'), $imageName);
+            $data['image'] = 'images/communities/' . $imageName;
         }
 
         Community::create($data);
 
-        return redirect()->route('community.index')->with('success', 'Community member added successfully.');
+        return redirect()->route('communities.index')->with('success', 'Community member added successfully.');
     }
 
     /**
-     * Display the specified community member.
+     * Display the specified communities member.
      */
     public function show(Community $community)
     {
-        return view('community.show', compact('community'));
+        return view('communities.show', compact('community'));
     }
 
     /**
-     * Show the form for editing the specified community member.
+     * Show the form for editing the specified communities member.
      */
     public function edit(Community $community)
     {
-        return view('community.edit', compact('community'));
+        return view('communities.edit', compact('community'));
     }
 
     /**
-     * Update the specified community member in storage.
+     * Update the specified communities member in storage.
      */
     public function update(Request $request, Community $community)
     {
@@ -81,27 +81,27 @@ class CommunityController extends Controller
 
         if ($request->hasFile('image')) {
             // Optionally delete the old image
-            // Storage::delete($community->image);
+            // Storage::delete($communities->image);
 
             $imageName = time().'.'.$request->image->extension();
-            $request->image->move(public_path('images/community'), $imageName);
-            $data['image'] = 'images/community/' . $imageName;
+            $request->image->move(public_path('images/communities'), $imageName);
+            $data['image'] = 'images/communities/' . $imageName;
         }
 
         $community->update($data);
 
-        return redirect()->route('community.index')->with('success', 'Community member updated successfully.');
+        return redirect()->route('communities.index')->with('success', 'Community member updated successfully.');
     }
 
     /**
-     * Remove the specified community member from storage.
+     * Remove the specified communities member from storage.
      */
     public function destroy(Community $community)
     {
         // Optionally delete the image file
-        // Storage::delete($community->image);
+        // Storage::delete($communities->image);
 
         $community->delete();
-        return redirect()->route('community.index')->with('success', 'Community member deleted successfully.');
+        return redirect()->route('communities.index')->with('success', 'Community member deleted successfully.');
     }
 }

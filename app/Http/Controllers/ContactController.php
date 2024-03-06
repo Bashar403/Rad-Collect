@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ContactController extends Controller
 {
     // The Contact section does not need index, show, edit, or destroy methods
-    // because it's only for handling contact form submissions.
+    // because it's only for handling contacts form submissions.
 
     public function create()
     {
@@ -26,6 +26,6 @@ class ContactController extends Controller
 
         Contact::create($request->all());
 
-        return redirect()->route('contact.create')->with('success', 'Your message has been sent successfully!');
+        return redirect()->route('contacts.create')->with('success', 'Your message has been sent successfully!');
     }
 }

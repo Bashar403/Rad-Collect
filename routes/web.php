@@ -42,45 +42,45 @@ Route::delete('/events/{event}', [EventController::class, 'destroy'])->name('eve
 
 // Collection Routes
 
-// Display a listing of the collection
+// Display a listing of the collections
 Route::get('/collections', [CollectionController::class, 'index'])->name('collections.index');
-// Show the form for creating a new item in the collection
+// Show the form for creating a new item in the collections
 Route::get('/collections/create', [CollectionController::class, 'create'])->name('collections.create');
-// Store a newly created item in the collection
+// Store a newly created item in the collections
 Route::post('/collections', [CollectionController::class, 'store'])->name('collections.store');
-// Display the specified item from the collection
-Route::get('/collections/{collection}', [CollectionController::class, 'show'])->name('collections.show');
-// Show the form for editing the specified item in the collection
-Route::get('/collections/{collection}/edit', [CollectionController::class, 'edit'])->name('collections.edit');
-// Update the specified item in the collection
-Route::put('/collections/{collection}', [CollectionController::class, 'update'])->name('collections.update');
-Route::patch('/collections/{collection}', [CollectionController::class, 'update']);
-// Remove the specified item from the collection
-Route::delete('/collections/{collection}', [CollectionController::class, 'destroy'])->name('collections.destroy');
+// Display the specified item from the collections
+Route::get('/collections/{collection}', [CollectionController::class, 'show'])->name('collections.show'); // Adjusted to singular
+// Show the form for editing the specified item in the collections
+Route::get('/collections/{collection}/edit', [CollectionController::class, 'edit'])->name('collections.edit'); // Adjusted to singular
+// Update the specified item in the collections
+Route::put('/collections/{collection}', [CollectionController::class, 'update'])->name('collections.update'); // Adjusted to singular
+Route::patch('/collections/{collection}', [CollectionController::class, 'update']); // Adjusted to singular
+// Remove the specified item from the collections
+Route::delete('/collections/{collection}', [CollectionController::class, 'destroy'])->name('collections.destroy'); // Adjusted to singular
 
-// community Routes
-// Display a listing of the community posts/members
-Route::get('/community', [CommunityController::class, 'index'])->name('community.index');
-// Show the form for creating a new community post/member
-Route::get('/community/create', [CommunityController::class, 'create'])->name('community.create');
-// Store a newly created community post/member
-Route::post('/community', [CommunityController::class, 'store'])->name('community.store');
-// Display the specified community post/member
-Route::get('/community/{community}', [CommunityController::class, 'show'])->name('community.show');
-// Show the form for editing the specified community post/member
-Route::get('/community/{community}/edit', [CommunityController::class, 'edit'])->name('community.edit');
-// Update the specified community post/member
-Route::put('/community/{community}', [CommunityController::class, 'update'])->name('community.update');
-Route::patch('/community/{community}', [CommunityController::class, 'update']);
-// Remove the specified community post/member
-Route::delete('/community/{community}', [CommunityController::class, 'destroy'])->name('community.destroy');
+// communities Routes
+// Display a listing of the communities posts/members
+Route::get('/communities', [CommunityController::class, 'index'])->name('communities.index');
+// Show the form for creating a new communities post/member
+Route::get('/communities/create', [CommunityController::class, 'create'])->name('communities.create');
+// Store a newly created communities post/member
+Route::post('/communities', [CommunityController::class, 'store'])->name('communities.store');
+// Display the specified communities post/member
+Route::get('/communities/{community}', [CommunityController::class, 'show'])->name('communities.show');
+// Show the form for editing the specified communities post/member
+Route::get('/communities/{community}/edit', [CommunityController::class, 'edit'])->name('communities.edit');
+// Update the specified communities post/member
+Route::put('/communities/{community}', [CommunityController::class, 'update'])->name('communities.update');
+Route::patch('/communities/{community}', [CommunityController::class, 'update']);
+// Remove the specified communities post/member
+Route::delete('/communities/{community}', [CommunityController::class, 'destroy'])->name('communities.destroy');
 
 // Contact Routes
 
-// Show the contact form
-Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
-// Process the contact form submission
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+// Show the contacts form
+Route::get('/contacts', [ContactController::class, 'create'])->name('contacts.create');
+// Process the contacts form submission
+Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
 
 
 
