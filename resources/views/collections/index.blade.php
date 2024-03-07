@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex justify-center h-screen">
+    <div class="flex justify-center h-fit">
         <div class="container mx-auto px-4 py-8">
             <h1 class="text-4xl font-bold text-gray-800 text-center mb-6">Collections</h1>
 
@@ -39,8 +39,13 @@
                 @endforelse
             </div>
 
-            <!-- Pagination (if applicable) -->
-            {{-- $collections->links() --}}
+            <!-- Pagination -->
+            <div class="mt-4">
+                {{ $collections->appends(request()->except('page'))->links() }}
+            </div>
+
+
+
         </div>
     </div>
 @endsection

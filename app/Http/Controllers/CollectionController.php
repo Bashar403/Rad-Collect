@@ -9,20 +9,29 @@ class CollectionController extends Controller
 {
     public function index(Request $request)
     {
+        // Validate incoming request
+        $validated = $request->validate([
+            'search' => 'nullable|string',
+            'type' => 'nullable|in:cards,collectibles',
+        ]);
+
+        // Build the query with optional search and type filters
         $query = Collection::query();
 
-        if ($request->filled('search')) {
-            $query->where('name', 'like', '%' . $request->search . '%');
+        if (!empty($validated['search'])) {
+            $query->where('name', 'like', '%' . $validated['search'] . '%');
         }
 
-        if ($request->filled('type')) {
-            $query->where('type', $request->type);
+        if (!empty($validated['type'])) {
+            $query->where('type', $validated['type']);
         }
 
-        $collections = $query->get();
+        // Paginate the results
+        $collections = $query->paginate(10); // Display 10 items per page
 
         return view('collections.index', compact('collections'));
     }
+
 
     public function create()
     {
