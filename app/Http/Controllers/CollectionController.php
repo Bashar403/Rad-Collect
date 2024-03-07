@@ -7,9 +7,20 @@ use Illuminate\Http\Request;
 
 class CollectionController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $collections = Collection::latest()->get();
+        $query = Collection::query();
+
+        if ($request->filled('search')) {
+            $query->where('name', 'like', '%' . $request->search . '%');
+        }
+
+        if ($request->filled('type')) {
+            $query->where('type', $request->type);
+        }
+
+        $collections = $query->get();
+
         return view('collections.index', compact('collections'));
     }
 
