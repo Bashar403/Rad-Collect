@@ -18,10 +18,10 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'full_name' => 'required',
-            'email' => 'required|email',
-            'phone_number' => 'required',
-            'message' => 'required',
+            'full_name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone_number' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10', // Validates phone numbers with a minimum length of 10 characters
+            'message' => 'required|string|min:10', // Ensure the message has at least 10 characters
         ]);
 
         Contact::create($request->all());

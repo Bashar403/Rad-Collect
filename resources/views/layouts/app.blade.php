@@ -61,10 +61,10 @@
             <div class="flex flex-col items-center">
                 <img class="w-20" src="{{secure_asset('Theme/imgs/Logo.png')}}" alt="Website's Logo">
                 <div class="flex items-center gap-4 mt-4">
-                    <a href="{{ route('events.index')}}" class="text-gray-800 text-lg font-bold hover:text-blue-500">Events</a>
-                    <a href="{{ route('collections.index')}}" class="text-gray-800 text-lg font-bold hover:text-blue-500">Collection</a>
-                    <a href="{{ route('communities.index')}}" class="text-gray-800 text-lg font-bold hover:text-blue-500">Community</a>
-                    <a href="{{ route('contacts.create')}}" class="text-gray-800 text-lg font-bold hover:text-blue-500">Contact</a>
+                    <a href="{{ route('events.index')}}" class="text-gray-800 text-sm font-bold hover:text-blue-500">Events</a>
+                    <a href="{{ route('collections.index')}}" class="text-gray-800 text-sm font-bold hover:text-blue-500">Collection</a>
+                    <a href="{{ route('communities.index')}}" class="text-gray-800 text-sm font-bold hover:text-blue-500">Community</a>
+                    <a href="{{ route('contacts.create')}}" class="text-gray-800 text-sm font-bold hover:text-blue-500">Contact</a>
 
                 </div>
             </div>
