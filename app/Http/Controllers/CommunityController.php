@@ -10,9 +10,16 @@ class CommunityController extends Controller
     /**
      * Display a listing of the communities members.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $communities = Community::latest()->get();
+        $searchTerm = $request->input('search');
+
+        $communities = Community::when($searchTerm, function($query, $searchTerm) {
+            return $query->where('name', 'like', '%' . $searchTerm . '%');
+        })
+            ->inRandomOrder()
+            ->paginate(2); // Adjust the number as needed
+
         return view('communities.index', compact('communities'));
     }
 
