@@ -60,20 +60,20 @@ Route::delete('/collections/{collection}', [CollectionController::class, 'destro
 
 // communities Routes
 // Display a listing of the communities posts/members
-Route::get('/communities', [CommunityController::class, 'index'])->name('communities.index');
-// Show the form for creating a new communities post/member
-Route::get('/communities/create', [CommunityController::class, 'create'])->name('communities.create');
-// Store a newly created communities post/member
-Route::post('/communities', [CommunityController::class, 'store'])->name('communities.store');
-// Display the specified communities post/member
-Route::get('/communities/{community}', [CommunityController::class, 'show'])->name('communities.show');
-// Show the form for editing the specified communities post/member
-Route::get('/communities/{community}/edit', [CommunityController::class, 'edit'])->name('communities.edit');
-// Update the specified communities post/member
-Route::put('/communities/{community}', [CommunityController::class, 'update'])->name('communities.update');
-Route::patch('/communities/{community}', [CommunityController::class, 'update']);
-// Remove the specified communities post/member
-Route::delete('/communities/{community}', [CommunityController::class, 'destroy'])->name('communities.destroy');
+//Route::get('/communities', [CommunityController::class, 'index'])->name('communities.index');
+//// Show the form for creating a new communities post/member
+//Route::get('/communities/create', [CommunityController::class, 'create'])->name('communities.create');
+//// Store a newly created communities post/member
+//Route::post('/communities', [CommunityController::class, 'store'])->name('communities.store');
+//// Display the specified communities post/member
+//Route::get('/communities/{community}', [CommunityController::class, 'show'])->name('communities.show');
+//// Show the form for editing the specified communities post/member
+//Route::get('/communities/{community}/edit', [CommunityController::class, 'edit'])->name('communities.edit');
+//// Update the specified communities post/member
+//Route::put('/communities/{community}', [CommunityController::class, 'update'])->name('communities.update');
+//Route::patch('/communities/{community}', [CommunityController::class, 'update']);
+//// Remove the specified communities post/member
+//Route::delete('/communities/{community}', [CommunityController::class, 'destroy'])->name('communities.destroy');
 
 // Contact Routes
 
