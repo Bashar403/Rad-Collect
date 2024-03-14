@@ -27,15 +27,8 @@
                         <a href="{{ route('about') }}" class="text-white text-lg font-bold hover:text-blue-500">About Us</a>
                         <a href="{{ route('events.index')}}" class="text-white text-lg font-bold hover:text-blue-500">Events</a>
                         <a href="{{ route('collections.index')}}" class="text-white text-lg font-bold hover:text-blue-500">Collection</a>
-                        <a href="{{ route('communities.index')}}" class="text-white text-lg font-bold hover:text-blue-500">Community</a>
-                        <div x-data="{ openDropdown: false }" class="relative text-lg">
-                            <button @click="openDropdown = !openDropdown" class="text-white font-bold hover:text-blue-500">Contact Us</button>
-                            <div x-show="openDropdown" @click.away="openDropdown = false" class="absolute mt-2 py-2 w-48 bg-white rounded-lg shadow-xl z-50">
-                                <a href="{{ route('contacts.create')}}" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">Contact</a>
-                                <a href="{{ route('faq') }}" class="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white">FAQ</a>
-                            </div>
-                        </div>
-                        <a href="#" class="bg-blue-500 text-white px-4 py-2 rounded font-bold hover:bg-blue-600">Sign Up</a>
+                        <a href="{{ route('contacts.create')}}" class="text-white text-lg font-bold hover:text-blue-500">Contact</a>
+                        <a href="{{ route('faq') }}" class="text-white text-lg font-bold hover:text-blue-500">FAQ</a>
                     </div>
                 </div>
 
@@ -44,10 +37,8 @@
                     <a href="{{ route('about') }}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">About</a>
                     <a href="{{ route('events.index')}}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">Events</a>
                     <a href="{{ route('collections.index')}}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">Collection</a>
-                    <a href="{{ route('communities.index')}}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">Community</a>
                     <a href="{{ route('contacts.create')}}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">Contact</a>
                     <a href="{{ route('faq') }}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">FAQ</a>
-                    <a href="" class="bg-blue-500 text-white px-4 py-2 rounded font-bold hover:bg-blue-600">Sign Up</a>
                 </div>
             </nav>
         </header>
@@ -63,7 +54,6 @@
                 <div class="flex items-center gap-4 mt-4">
                     <a href="{{ route('events.index')}}" class="text-gray-800 text-sm font-bold hover:text-blue-500">Events</a>
                     <a href="{{ route('collections.index')}}" class="text-gray-800 text-sm font-bold hover:text-blue-500">Collection</a>
-                    <a href="{{ route('communities.index')}}" class="text-gray-800 text-sm font-bold hover:text-blue-500">Community</a>
                     <a href="{{ route('contacts.create')}}" class="text-gray-800 text-sm font-bold hover:text-blue-500">Contact</a>
 
                 </div>
