@@ -7,6 +7,7 @@
 
             <!-- Search and Filter Form -->
             <form action="{{ route('collections.index') }}" method="GET" class="mb-6">
+                @csrf
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-4">
                     <input type="text" name="search" placeholder="Search collections..." value="{{ request('search') }}" class="border p-2 flex-grow" />
 
