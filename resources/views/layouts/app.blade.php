@@ -7,7 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
-<body class="bg-yellow-50 font-hanken flex-col h-full">
+<body class="bg-yellow-50 font-hanken  flex-col sm:h-full">
 <div class="flex-grow flex flex-col">
 
     <!-- navigation bar -->
@@ -26,7 +26,7 @@
                     <div class="md:flex hidden space-x-4 items-center gap-4">
                         <a href="{{ route('about') }}" class="text-white text-lg font-bold hover:text-blue-500">About Us</a>
                         <a href="{{ route('events.index')}}" class="text-white text-lg font-bold hover:text-blue-500">Events</a>
-                        <a href="{{ route('collections.index')}}" class="text-white text-lg font-bold hover:text-blue-500">Collection</a>
+                        <a href="{{ route('media.index')}}" class="text-white text-lg font-bold hover:text-blue-500">media</a>
                         <a href="{{ route('contacts.create')}}" class="text-white text-lg font-bold hover:text-blue-500">Contact</a>
                         <a href="{{ route('faq') }}" class="text-white text-lg font-bold hover:text-blue-500">FAQ</a>
                     </div>
@@ -36,7 +36,7 @@
                 <div class="md:hidden py-5" x-show="open" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
                     <a href="{{ route('about') }}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">About</a>
                     <a href="{{ route('events.index')}}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">Events</a>
-                    <a href="{{ route('collections.index')}}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">Collection</a>
+                    <a href="{{ route('media.index')}}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">media</a>
                     <a href="{{ route('contacts.create')}}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">Contact</a>
                     <a href="{{ route('faq') }}" class="block py-2 text-white text-lg font-bold hover:text-blue-500">FAQ</a>
                 </div>
@@ -53,7 +53,7 @@
                 <img class="w-20" src="{{secure_asset('Theme/imgs/Logo.png')}}" alt="Website's Logo">
                 <div class="flex items-center gap-4 mt-4">
                     <a href="{{ route('events.index')}}" class="text-gray-800 text-sm font-bold hover:text-blue-500">Events</a>
-                    <a href="{{ route('collections.index')}}" class="text-gray-800 text-sm font-bold hover:text-blue-500">Collection</a>
+                    <a href="{{ route('media.index')}}" class="text-gray-800 text-sm font-bold hover:text-blue-500">media</a>
                     <a href="{{ route('contacts.create')}}" class="text-gray-800 text-sm font-bold hover:text-blue-500">Contact</a>
 
                 </div>

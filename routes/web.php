@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MediaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\CollectionController;
@@ -56,6 +57,8 @@ Route::get('/collections/{collection}', [CollectionController::class, 'show'])->
 
 Route::get('/contacts', [ContactController::class, 'create'])->name('contacts.create');
 Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
+Route::resource('media', MediaController::class);
+
 
 // Static Pages Routes
 Route::get('/about', function () {
