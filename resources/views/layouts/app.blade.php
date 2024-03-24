@@ -7,7 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
-<body class="bg-yellow-50 font-hanken  flex-col sm:h-full">
+<body class="bg-yellow-50 font-hanken  flex-col h-full">
 <div class="flex-grow flex flex-col">
 
     <!-- navigation bar -->

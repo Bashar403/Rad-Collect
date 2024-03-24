@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex justify-center h-2/3">
+    <div class="flex justify-center sm:h-full lg:h-3/4">
         <div class="container mx-auto px-4 py-8">
-            <h2 class="text-3xl font-bold text-center mb-6">Contact Us</h2>
+            <h1 class="text-3xl font-bold text-center mb-6">Contact Us</h1>
             <div class="max-w-xl mx-auto sm:px-6 lg:px-8">
                 <form action="{{ route('contacts.store') }}" method="POST">
                     @csrf

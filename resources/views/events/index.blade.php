@@ -1,40 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex justify-center h-full">
-        <div class="w-full px-5 py-12">
-            <h2 class="text-3xl font-bold text-gray-800 text-center mt-10 sm:text-4xl">Upcoming Events</h2>
-            <p class="text-base text-gray-800 mt-5 text-center">Discover the latest events happening near you</p>
+    <div class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold text-gray-800 text-center ">Upcoming Event</h2>
+        <p class="text-base text-gray-800 mt-5 text-center mb-12">Don't miss out on our next big event!</p>
 
-            <div class="pt-10 flex justify-center">
-                <!-- Events List Container -->
-                <div class="w-full lg:w-3/4 space-y-12">
+        <!-- Single Event Container -->
+        <div class="flex flex-col items-center">
+            @forelse ($events as $event)
+                <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full mb-8">
+                    <!-- Event Image -->
+                    <div class="w-full h-64 sm:h-96 overflow-hidden rounded-t-lg">
+                        <img src="{{ secure_asset($event->image) }}" alt="Event image" class="w-full h-full object-cover">
+                    </div>
 
-                    @foreach ($events as $event)
-                        <!-- Example Event -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center border-2 border-gray-800 rounded-xl">
-                            <!-- Event Image -->
-                            <div class="row-start-1 md:col-start-1">
-                                <img src="{{ secure_asset($event->image) }}" alt="Event image" class="w-full h-56 object-cover object-center sm:rounded-l-lg sm:rounded-tr-none rounded-t-lg shadow-md">
-
-                            </div>
-                            <!-- Event Details -->
-                            <div class="mt-4 md:mt-0">
-                                <h2 class="text-3xl font-bold text-gray-800">{{ $event->name }}</h2>
-                                <div class="mt-4 flex items-center">
-                                    <img class="w-6 mr-2" src="{{secure_asset('Theme/imgs/time.svg')}}" alt="Time">
-                                    <p class="text-xl text-gray-800">{{ $event->time }}</p>
-                                </div>
-                                <div class="mt-2 flex items-center">
-                                    <img class="w-6 mr-2" src="{{secure_asset('Theme/imgs/map-pin.svg')}}" alt="Map">
-                                    <p class="text-xl text-gray-800">{{ $event->location }}</p>
-                                </div>
-                            </div>
+                    <!-- Event Details -->
+                    <div class="p-4 md:p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">{{ $event->name }}</h3>
+                        <div class="flex items-center mb-4">
+                            <img class="w-5 h-5 mr-2" src="{{secure_asset('Theme/imgs/time.svg')}}" alt="Time">
+                            <p class="text-gray-600">{{ $event->time }}</p>
                         </div>
-                    @endforeach
+                        <div class="flex items-center mb-4">
+                            <img class="w-5 h-5 mr-2" src="{{secure_asset('Theme/imgs/map-pin.svg')}}" alt="Location">
+                            <p class="text-gray-600">{{ $event->location }}</p>
+                        </div>
+                        <a href="#" class="inline-block bg-yellow-500 text-white font-bold rounded-lg px-6 py-2 hover:bg-yellow-600 transition-colors duration-200">Learn More</a>
+                    </div>
                 </div>
-            </div>
+            @empty
+                <p class="text-gray-600">No upcoming events found.</p>
+            @endforelse
         </div>
     </div>
 @endsection
-

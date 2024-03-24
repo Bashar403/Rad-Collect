@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mx-auto px-4 py-8 text-center sm:h-full">
+    <div class="container mx-auto px-4 py-8 text-center sm:h-full lg:h-3/4">
         <h1 class="text-3xl font-bold text-gray-800 mb-4">Media Gallery</h1>
         <p class="text-md text-gray-600 mb-8">Explore our curated collection of interviews, articles, and news in the world of sports and collectibles.</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-center items-center">

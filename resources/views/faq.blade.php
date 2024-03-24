@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex justify-center  h-2/3 py-12">
+    <div class="flex justify-center  sm:h-full lg:h-3/4 py-8">
         <div x-data="{ selected: null }" class="max-w-2xl mx-auto p-5">
-            <h2 class="text-3xl font-bold text-center mb-6">Frequently Asked Questions</h2>
+            <h1 class="text-3xl font-bold text-center mb-6">Frequently Asked Questions</h1>
 
             <ul class="space-y-3">
                 <!-- FAQ Item 1 -->

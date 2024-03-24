@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex justify-center h-screen">
+    <div class="flex justify-center sm:h-full lg:h-3/4">
         <div class="w-full sm:w-3/4 p-10">
-            <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">About Us</h2>
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Journey in the World of Collectibles</h3>
+            <h1 class="text-3xl font-bold text-gray-800 text-center mb-10">About Us</h1>
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Our Journey in the World of Collectibles</h2>
 
             <div class="block lg:flex items-center lg:items-start text-left">
+
                 <div class="lg:flex-1 ">
                     <p class="text-lg sm:text-base lg:text-lg text-gray-800 mb-4">
                         Welcome to our passionate community of trading card enthusiasts! This weekend marks a significant moment for us in Windsor, as we return to in-person shows in South Walkerville. I, Robbie Durling, am the proud organizer of the Rad Sports Card and Collectibles Show at the Optimist Centre. Our venture into the world of collectibles is fueled by a simple belief: the thrill of the find can turn any investment into a treasure, whether it be $100 transforming into $1,000, or an experience that enriches our collective passion.
